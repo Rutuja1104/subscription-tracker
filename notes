@@ -1,0 +1,86 @@
+type of ipv
+ipv4
+ipv6
+- DNS used to indetify the ip
+api uses
+- http method or (called http verbs)
+GET - retrieve
+POST -create
+Patch - update an existing resource
+DELETE - Remove a resource
+
+endpoints like get /users post/users
+header contains metadata
+request body {
+    id:1,
+    name:'test'
+}
+used to pass data in post, patch
+200 ok
+201 created
+400 bad request
+404 not found
+500 internal sever error
+
+types of api
+restful api
+graphQl api it use /graphql endpints
+it is use large data (it reduces the overfetching api, under fetching)
+
+frameWorks
+middleware
+routeing
+:- express.js
+nest
+hono
+
+DBS : -
+system that organize data
+fetch update store data
+types
+rational dbs :- store data in structral way (use SQL, mysql, postgres SQL, ORM PRISMA)
+non relational dbs: they offer more fixibilty and don't rely on rigid table structure, less complex, ()
+like mongodb, redis
+
+BACKEND ARCHITECTURES
+- monolithic Architecture
+pros:-
+simple to develop and deploy
+easier to debug since everything in one place.
+
+cons:-
+can get messy as the app grows
+scaling specific parts of the app can be tricky
+
+microservice Architecture
+in this application is broken down into smaller indepedent services
+each service handle handle specific business function like authentication, payment. and it communicates with each other via api's
+
+serverless architecture
+it let you write code without worrying about the underlying infrasture your cloud provider like AWS Lambda,(verscel also)
+
+
+SERVERLESS DATA  PLATFORM => UPSTASh
+-redis
+-vector
+-Qstash
+
+Duolingo use for automatic sending email
+arcjet : it allows you secure your application
+it allow to 
+-rate limiting
+- bot protection
+
+
+middleWare 
+express.json
+errorhandlermiddleware
+urlencoded
+cookieParser
+
+Routes
+
+DB connections
+
+bcrypt (it will allows for hashing)
+JWT (jsonwebtoken)
