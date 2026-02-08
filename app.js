@@ -9,13 +9,14 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
+app.use(express.json());// Middleware to parse JSON bodies
+app.use(express.urlencoded({ extended: false })); // Middleware to parse URL-encoded bodies (we send response in html forms using urlencoded format)
+app.use(cookieParser());// Middleware to parse cookies from incoming requests
+
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/subscriptions', SubscriptionRouter);
 
-app.use(express.json());// Middleware to parse JSON bodies
-app.use(express.urlencoded({ extended: false })); // Middleware to parse URL-encoded bodies (we send response in html forms using urlencoded format)
-app.use(cookieParser());// Middleware to parse cookies from incoming requests
 
 app.use(errorMiddleware);// Error handling middleware should be the last middleware
 
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, async () => {
     console.log(`Subscription Tracker App is running on http://localhost:${PORT}`);
     await connectToDatabase();
-    
+
 });
 
 export default app;
